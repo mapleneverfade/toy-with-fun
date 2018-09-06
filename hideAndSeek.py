@@ -9,22 +9,18 @@ class Joy(tkinter.Tk):
     def __init__(self):
         self.root = tkinter.Tk()
         self.root.title('Knock Knock Knock')
-        self.imagepath = 'C:\\Users\\chenchangyu\\Desktop\\收藏图\\201808281150477723.gif'   #　gif 文件路径
+        self.imagepath = './gif/cute.gif'   #　gif 文件路径
         self.png = self.gif_to_png()   # 将 gif 转换成 png
-        self.logo_cute_1 = tkinter.PhotoImage(file='C:\\Users\\chenchangyu\\Desktop\\收藏图\\1.png')
-        self.logo_cute_2 = tkinter.PhotoImage(file='C:\\Users\\chenchangyu\\Desktop\\收藏图\\2.png')
-        self.logo_shy = tkinter.PhotoImage(file='C:\\Users\\chenchangyu\\Desktop\\收藏图\\64ce8b5494eef01f942a3d98e1fe9925bc317d76.jpg')
+        self.logo_shy = tkinter.PhotoImage(file='./gif/shy.gif')
         #self.label_gif = tkinter.Label(self.root, image= self.logo_cute_1)                                                  # 定义label,显式gif
-
         self.label_gif = tkinter.Label(self.root, image = self.png[0])                                                  # 定义label,显式gif
-
         self.image_shy = tkinter.Label(self.root, image = self.logo_shy)
 
         self.label_text = tkinter.Label(self.root, text='Hey beauty',font = "Helvetica 16 bold italic")                                        # 定义label,显式文本
         self.button_love = tkinter.Button(self.root, text='不要戳我', command=self.love, bg='white',relief=tkinter.FLAT,width=3,height=3)    # 定义button
         self.button_leave = tkinter.Button(self.root, text='有本事追我啊', bg="yellow", fg='black',relief=tkinter.FLAT, width=7, height=3)  # 定义button
 
-        self.num_of_gif = 0
+        self.num_of_gif = 0  # 循环显示gif
     def gif_to_png(self):
         '''
             gif to png
@@ -68,11 +64,9 @@ class Joy(tkinter.Tk):
 
     def run(self):
         self.root.geometry('400x270+800+400')
-        i = 1
         self.label_gif.pack()
         self.label_gif.after(300, self.show_gif)
         self.image_shy.place(x= 285, y = 215)
-
         #self.label_text.pack()
         self.button_love.place(x= 340, y = 240,width =55, height=20)
 
