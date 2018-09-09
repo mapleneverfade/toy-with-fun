@@ -1,4 +1,4 @@
-#-*-coding:utf8-*-
+#-*-coding:utf-8-*-
 import tkinter
 import random
 import tkinter.messagebox
